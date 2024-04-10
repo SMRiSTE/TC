@@ -128,16 +128,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="All-terrain boots.cpp" />
     <ClCompile Include="Camel.cpp" />
+    <ClCompile Include="Centavr.cpp" />
+    <ClCompile Include="FastCam.cpp" />
     <ClCompile Include="grTC.cpp" />
     <ClCompile Include="kyrs.cpp" />
     <ClCompile Include="RACE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="All-terrain boots.h" />
     <ClInclude Include="Camel.h" />
+    <ClInclude Include="Centavr.h" />
+    <ClInclude Include="FastCam.h" />
     <ClInclude Include="grTC.h" />
     <ClInclude Include="kyrs.h" />
     <ClInclude Include="RACE.h" />
+    <ClInclude Include="Transport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

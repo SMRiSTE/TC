@@ -10,6 +10,6 @@ public:
 		this->runtime = 30;
 		this->speed = 10;
 	}
-	int get_time() override;
+	int get_time(int dis) override;
 	std::string get_res() override;
 };
