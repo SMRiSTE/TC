@@ -4,6 +4,6 @@
 class RACE {
 
 public:
-	void pr_resGR();
+	void pr_res();
 	
 };

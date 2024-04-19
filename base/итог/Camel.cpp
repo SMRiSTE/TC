@@ -1,6 +1,6 @@
 #include "Camel.h"
 
-int Camel::get_time(int dis) {
+double Camel::get_time(int dis) {
 	this->time = dis / this->speed + ((dis/this->speed/this->runtime-2)*8+this->chilltime);
 	return this->time;
 }

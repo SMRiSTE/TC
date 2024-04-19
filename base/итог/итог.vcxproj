@@ -128,22 +128,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AirTC.cpp" />
     <ClCompile Include="All-terrain boots.cpp" />
+    <ClCompile Include="Broomstick.cpp" />
     <ClCompile Include="Camel.cpp" />
     <ClCompile Include="Centavr.cpp" />
+    <ClCompile Include="Eagle.cpp" />
     <ClCompile Include="FastCam.cpp" />
     <ClCompile Include="grTC.cpp" />
     <ClCompile Include="kyrs.cpp" />
     <ClCompile Include="RACE.cpp" />
+    <ClCompile Include="The magic carpet.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AirTC.h" />
     <ClInclude Include="All-terrain boots.h" />
+    <ClInclude Include="Broomstick.h" />
     <ClInclude Include="Camel.h" />
     <ClInclude Include="Centavr.h" />
+    <ClInclude Include="Eagle.h" />
     <ClInclude Include="FastCam.h" />
     <ClInclude Include="grTC.h" />
     <ClInclude Include="kyrs.h" />
     <ClInclude Include="RACE.h" />
+    <ClInclude Include="The magic carpet.h" />
     <ClInclude Include="Transport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

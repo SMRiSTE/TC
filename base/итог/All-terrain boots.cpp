@@ -1,5 +1,5 @@
 #include"All-terrain boots.h"
-int Boots::get_time(int dis) {
+double Boots::get_time(int dis) {
 	this->time = dis / this->speed + ((dis / this->speed / this->runtime - 1) * 5 + this->chilltime);
 	return this->time;
 }

@@ -1,15 +1,15 @@
 #pragma once
-#include "grTC.h"
+#include"AirTC.h"
 
-class Camel :public grTC {
+class Carpet : public AirTC {
 public:
-	Camel() {
+	Carpet(){
 		this->time = 0;
-		this->name = "Верблюд";
-		this->chilltime = 5;
-		this->runtime = 30;
+		this->name = "Ковёр-самолёт";
+		this->shortdis = 0;
 		this->speed = 10;
 	}
+
 	double get_time(int dis) override;
 	std::string get_res() override;
 };

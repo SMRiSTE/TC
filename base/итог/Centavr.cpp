@@ -1,6 +1,6 @@
 #include"Centavr.h"
 
-int Centavr::get_time(int dis) {
+double Centavr::get_time(int dis) {
 	this->time = dis / this->speed + ((dis / this->speed / this->runtime -1) * 2 + this->chilltime);
 	return this->time;
 }

@@ -9,6 +9,6 @@ public:
 		this->runtime = 8;
 		this->speed =15;
 	}
-	int get_time(int dis) override;
+	double get_time(int dis) override;
 	std::string get_res() override;
 };
