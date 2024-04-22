@@ -4,7 +4,7 @@
 
 class grTC :public Transport {
 protected:
-	int time;
+	double time;
 	double chilltime;
 	int runtime;
 	int speed;

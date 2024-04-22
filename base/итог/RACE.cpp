@@ -77,11 +77,11 @@ void RACE::pr_res() {
 				}
 			}
 			if (choice == 1) {
-				if (arr[counter] == 0) {
+				if (arr[0] == 0) {
 					num++;
 					Boots B;
-					arr[counter] = B.get_time(dis);
-					strarr[counter] = B.get_res();
+					arr[0] = B.get_time(dis);
+					strarr[0] = B.get_res();
 					std::cout << std::endl << "Ботинки-вездеходы зарегестрированны\n";
 					TCname += ", Ботинки-вездеходы";
 				}
@@ -90,11 +90,11 @@ void RACE::pr_res() {
 				}
 			}
 			else if (choice == 3) {
-				if (arr[counter] == 0) {
+				if (arr[1] == 0) {
 					num++;
 					Camel Cam;
-					arr[counter] = Cam.get_time(dis);
-					strarr[counter] = Cam.get_res();
+					arr[1] = Cam.get_time(dis);
+					strarr[1] = Cam.get_res();
 					std::cout << std::endl << "Верблюд зарегестрированны\n";
 					TCname += ", Верблюд";
 				}
@@ -103,11 +103,11 @@ void RACE::pr_res() {
 				}
 			}
 			else if (choice == 4) {
-				if (arr[counter] == 0) {
+				if (arr[2] == 0) {
 					num++;
 					Centavr Can;
-					arr[counter] = Can.get_time(dis);
-					strarr[counter] = Can.get_res();
+					arr[2] = Can.get_time(dis);
+					strarr[2] = Can.get_res();
 					std::cout << std::endl << "Кентавр зарегестрированны\n";
 					TCname += ", Кентавр";
 				}
@@ -117,11 +117,11 @@ void RACE::pr_res() {
 			
 			}
 			else if (choice == 6) {
-				if (arr[counter] == 0) {
+				if (arr[3] == 0) {
 					num++;
 					FastCam FC;
-					arr[counter] = FC.get_time(dis);
-					strarr[counter] = FC.get_res();
+					arr[3] = FC.get_time(dis);
+					strarr[3] = FC.get_res();
 					std::cout << std::endl << "Верблюд-быстроход зарегестрированны\n";
 					TCname += ", Верблюд-быстроход";
 				}
@@ -153,7 +153,7 @@ void RACE::pr_res() {
 		double* arr = new double[3];
 		for (int i = 0; i < 3; i++) {
 			arr[i] = 0;
-			strarr[i] = " ";
+			strarr[i] = ", Ковёр-самолёт";
 		}
 		int num = 0;
 		int counter = 0;
@@ -210,11 +210,11 @@ void RACE::pr_res() {
 				}
 			}
 			if (choice == 2) {
-				if (arr[counter] == 0) {
+				if (arr[0] == 0) {
 					num++;
 					Broom B;
-					arr[counter] = B.get_time(dis);
-					strarr[counter] = B.get_res();
+					arr[0] = B.get_time(dis);
+					strarr[0] = B.get_res();
 					std::cout << std::endl << "Метла зарегестрированны\n";
 					TCname += ", Метла";
 					TCname[1] = ' ';
@@ -224,11 +224,11 @@ void RACE::pr_res() {
 				}
 			}
 			else if (choice == 5) {
-				if (arr[counter] == 0) {
+				if (arr[1] == 0) {
 					num++;
 					Eagle E;
-					arr[counter] = E.get_time(dis);
-					strarr[counter] = E.get_res();
+					arr[1] = E.get_time(dis);
+					strarr[1] = E.get_res();
 					std::cout << std::endl << "Орёл зарегестрированны\n";
 					TCname += ", Орёл";
 					TCname[1] = ' ';
@@ -238,17 +238,24 @@ void RACE::pr_res() {
 				}
 			}
 			else if (choice == 7) {
-				if (arr[counter] == 0) {
+				if (arr[2] == 0) {
 					num++;
-					Carpet Car;
-					arr[counter] = Car.get_time(dis);
-					strarr[counter] = Car.get_res();
-					std::cout << std::endl << "Кентавр зарегестрированны\n";
-					TCname += ", Кентавр";
+					Carpet C;
+					arr[2] = C.get_time(dis);
+					strarr[2] = C.get_res();
+					std::cout << std::endl << "Ковёр-самолёт зарегестрированны\n";
+					TCname += ", Ковёр-самолёт";
 					TCname[1] = ' ';
+					/*num++;
+					Carpet Car;
+					arr[2] = Car.get_time(dis);
+					strarr[2] = Car.get_res();
+					std::cout << std::endl << "Ковёр-самолёт зарегестрированны\n";
+					TCname += ", Ковёр-самолёт";
+					TCname[1] = ' ';*/
 				}
 				else {
-					std::cout << std::endl << "Кентавр уже зарегестрирован!" << std::endl;
+					std::cout << std::endl << "Ковёр-самолёт уже зарегестрирован!" << std::endl;
 				}
 
 			}

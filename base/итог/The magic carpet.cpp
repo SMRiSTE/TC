@@ -12,13 +12,12 @@ double Carpet::get_time(int dis) {
 	}
 	else if (5000 < dis < 10000) {
 		this->shortdis = 10;
-		this->time = (dis - (this->dis / 100 * shortdis)) / this->speed;
+		this->time = (static_cast<double>(dis) - (this->dis / 100 * shortdis)) / this->speed;
 	}
 	else {
 		this->shortdis = 5;
 		this->time = (dis - (this->dis / 100 * shortdis)) / this->speed;
 	}
-	std::cout << std::fixed << std::setprecision(2);
 	return this->time;
 }
 
