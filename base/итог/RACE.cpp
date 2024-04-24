@@ -1,4 +1,5 @@
 #include <iomanip>
+#include <algorithm>
 #include"RACE.h"
 #include"kyrs.h"
 void RACE::pr_res() {
@@ -35,7 +36,7 @@ void RACE::pr_res() {
 				std::cout << std::endl << "Выберите действие: " << std::endl << "1.Зарегестрировать транспорт" << std::endl << "2.Начать гонку" << std::endl;
 				std::cin >> choice1;
 				std::cout << std::endl;
-				if (choice1==1) {
+				if (choice1 == 1) {
 					continue;
 				}
 				else if (choice1 == 2) {
@@ -43,24 +44,39 @@ void RACE::pr_res() {
 						std::cout << "Зарегестрированно недостаточно транспорта" << std::endl;
 					}
 					else {
-						for (int i = 0; i < 4; i++) {
-							for (int j = 0; j < 3; j++) {
-								if (arr[i] < arr[j + 1]&&arr[j+1]!=0) {
-									int b = arr[j];
-									arr[j] = arr[j + 1];
-									arr[j + 1] = b;
-								}
-								else {
-									continue;
+						for (int k = 0; k < 4; k++) {
+							for (int i = 0; i < 4; i++) {
+								for (int j = 0; j < 3; j++) {
+									if (arr[j] == 0) {
+										double b = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = b;
+										std::string str = strarr[j];
+										strarr[j] = strarr[j + 1];
+										strarr[j + 1] = str;
+									}
+									if (arr[j] > arr[j + 1] && arr[j + 1] != 0) {
+										double b = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = b;
+										std::string str = strarr[j];
+										strarr[j] = strarr[j + 1];
+										strarr[j + 1] = str;
+									}
+									else {
+										continue;
+									}
 								}
 							}
-							if (arr[i] != 0) {
-								std::cout << i+1 << ". " << strarr[i] << std::endl;
+							if (arr[k] != 0) {
+								std::cout << k + 1 << ". " << strarr[k] << std::endl;
 							}
 							else {
 								continue;
 							}
 						}
+						
+						
 						choice1 = -1;
 						std::cout << std::endl << "1. Провести ещё одну гонку\n2. Выйти" << std::endl;
 						std::cin >> choice1;
@@ -105,16 +121,16 @@ void RACE::pr_res() {
 			else if (choice == 4) {
 				if (arr[2] == 0) {
 					num++;
-					Centavr Can;
-					arr[2] = Can.get_time(dis);
-					strarr[2] = Can.get_res();
+					Centavr Cant;
+					arr[2] = Cant.get_time(dis);
+					strarr[2] = Cant.get_res();
 					std::cout << std::endl << "Кентавр зарегестрированны\n";
 					TCname += ", Кентавр";
 				}
 				else {
 					std::cout << std::endl << "Кентавр уже зарегестрирован!" << std::endl;
 				}
-			
+
 			}
 			else if (choice == 6) {
 				if (arr[3] == 0) {
@@ -138,6 +154,8 @@ void RACE::pr_res() {
 		delete[] strarr;
 		delete[] arr;
 	}
+
+
 	if (choice0 == 2) {
 		std::string TCname = " ";
 		int dis;
@@ -153,12 +171,12 @@ void RACE::pr_res() {
 		double* arr = new double[3];
 		for (int i = 0; i < 3; i++) {
 			arr[i] = 0;
-			strarr[i] = ", Ковёр-самолёт";
+			strarr[i] = " ";
 		}
 		int num = 0;
 		int counter = 0;
 		while (true) {
-			std::cout << "Гонка для наземного транспорта. Расстояние: " << dis << std::endl << "Зарегестрированные транспортные средства: " << TCname << std::endl;
+			std::cout << "Гонка для воздушного транспорта. Расстояние: " << dis << std::endl << "Зарегестрированные транспортные средства: " << TCname << std::endl;
 			std::cout << "1.Ботинки-вездеходы\n2.Метла\n3.Верблюд\n4.Кентавр\n5.Орёл\n6.Верблюд-быстроход\n7.Ковёр-самолёт\n0.Закончить регестрацию\n";
 			choice = -1;
 			std::cout << "Выберите транспорт или 0 для окончания регестрации: ";
@@ -176,24 +194,38 @@ void RACE::pr_res() {
 						std::cout << "Зарегестрированно недостаточно транспорта" << std::endl;
 					}
 					else {
-						for (int i = 0; i < 3; i++) {
-							for (int j = 0; j < 2; j++) {
-								if (arr[i] < arr[j + 1] && arr[j + 1] != 0) {
-									int b = arr[j];
-									arr[j] = arr[j + 1];
-									arr[j + 1] = b;
-								}
-								else {
-									continue;
+						for (int k = 0; k < 3; k++) {
+							for (int i = 0; i < 3; i++) {
+								for (int j = 0; j < 2; j++) {
+									if (arr[j] == 0) {
+										double b = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = b;
+										std::string str = strarr[j];
+										strarr[j] = strarr[j + 1];
+										strarr[j + 1] = str;
+									}
+									if (arr[j] > arr[j + 1] && arr[j + 1] != 0) {
+										double b = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = b;
+										std::string str = strarr[j];
+										strarr[j] = strarr[j + 1];
+										strarr[j + 1] = str;
+									}
+									else {
+										continue;
+									}
 								}
 							}
-							if (arr[i] != 0) {
-								std::cout << i + 1 << ". " << strarr[i] << std::endl;
+							if (arr[k] != 0) {
+								std::cout << k + 1 << ". " << strarr[k] << std::endl;
 							}
 							else {
 								continue;
 							}
 						}
+
 						choice1 = -1;
 						std::cout << std::endl << "1. Провести ещё одну гонку\n2. Выйти" << std::endl;
 						std::cin >> choice1;
@@ -246,13 +278,6 @@ void RACE::pr_res() {
 					std::cout << std::endl << "Ковёр-самолёт зарегестрированны\n";
 					TCname += ", Ковёр-самолёт";
 					TCname[1] = ' ';
-					/*num++;
-					Carpet Car;
-					arr[2] = Car.get_time(dis);
-					strarr[2] = Car.get_res();
-					std::cout << std::endl << "Ковёр-самолёт зарегестрированны\n";
-					TCname += ", Ковёр-самолёт";
-					TCname[1] = ' ';*/
 				}
 				else {
 					std::cout << std::endl << "Ковёр-самолёт уже зарегестрирован!" << std::endl;
@@ -267,7 +292,195 @@ void RACE::pr_res() {
 		delete[] strarr;
 		delete[] arr;
 	}
-	
+
+	if (choice0 == 3) {
+		std::string TCname = " ";
+		int dis;
+		std::cout << "Введите длину дистанции (должна быть положительнна): ";
+		std::cin >> dis;
+		system("cls");
+		int choice;
+		std::cout << "Должно быть зарегестрировано хотя бы 2 транспортных средства\n 1.Зарегистрировать транспорт\n Выберите действие: ";
+		std::cin >> choice;
+		std::cout << std::endl;
+		system("cls");
+		std::string* strarr = new std::string[7];
+		double* arr = new double[7];
+		for (int i = 0; i < 7; i++) {
+			arr[i] = 0;
+			strarr[i] = ", Ковёр-самолёт";
+		}
+		int num = 0;
+		int counter = 0;
+		while (true) {
+			std::cout << "Гонка для воздушного транспорта. Расстояние: " << dis << std::endl << "Зарегестрированные транспортные средства: " << TCname << std::endl;
+			std::cout << "1.Ботинки-вездеходы\n2.Метла\n3.Верблюд\n4.Кентавр\n5.Орёл\n6.Верблюд-быстроход\n7.Ковёр-самолёт\n0.Закончить регестрацию\n";
+			choice = -1;
+			std::cout << "Выберите транспорт или 0 для окончания регестрации: ";
+			std::cin >> choice;
+			if (choice == 0) {
+				int choice1;
+				std::cout << std::endl << "Выберите действие: " << std::endl << "1.Зарегестрировать транспорт" << std::endl << "2.Начать гонку" << std::endl;
+				std::cin >> choice1;
+				std::cout << std::endl;
+				if (choice1 == 1) {
+					continue;
+				}
+				else if (choice1 == 2) {
+					if (num < 2) {
+						std::cout << "Зарегестрированно недостаточно транспорта" << std::endl;
+					}
+					else {
+						for (int k = 0; k < 7; k++) {
+							for (int i = 0; i < 7; i++) {
+								for (int j = 0; j < 6; j++) {
+									if (arr[j] == 0) {
+										double b = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = b;
+										std::string str = strarr[j];
+										strarr[j] = strarr[j + 1];
+										strarr[j + 1] = str;
+									}
+									if (arr[j] > arr[j + 1] && arr[j + 1] != 0) {
+										double b = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = b;
+										std::string str = strarr[j];
+										strarr[j] = strarr[j + 1];
+										strarr[j + 1] = str;
+									}
+									else {
+										continue;
+									}
+								}
+							}
+							if (arr[k] != 0) {
+								std::cout << k + 1 << ". " << strarr[k] << std::endl;
+							}
+							else {
+								continue;
+							}
+						}
+						choice1 = -1;
+						std::cout << std::endl << "1. Провести ещё одну гонку\n2. Выйти" << std::endl;
+						std::cin >> choice1;
+						if (choice1 == 1) {
+							delete[] strarr;
+							delete[] arr;
+							RACE R;
+							R.pr_res();
+						}
+						else if (choice1 == 2) {
+							exit(0);
+						}
+					}
+				}
+			}
+			if (choice == 1) {
+				if (arr[0] == 0) {
+					num++;
+					Boots B;
+					arr[0] = B.get_time(dis);
+					strarr[0] = B.get_res();
+					std::cout << std::endl << "Ботинки-вездеходы зарегестрированны\n";
+					TCname += ", Ботинки-вездеходы";
+				}
+				else {
+					std::cout << std::endl << "Ботинки-вездеходы уже зарегестрирован!" << std::endl;
+				}
+			}
+			else if (choice == 3) {
+				if (arr[1] == 0) {
+					num++;
+					Camel Cam;
+					arr[1] = Cam.get_time(dis);
+					strarr[1] = Cam.get_res();
+					std::cout << std::endl << "Верблюд зарегестрированны\n";
+					TCname += ", Верблюд";
+				}
+				else {
+					std::cout << std::endl << "Верблюд уже зарегестрирован!" << std::endl;
+				}
+			}
+			else if (choice == 4) {
+				if (arr[2] == 0) {
+					num++;
+					Centavr Can;
+					arr[2] = Can.get_time(dis);
+					strarr[2] = Can.get_res();
+					std::cout << std::endl << "Кентавр зарегестрированны\n";
+					TCname += ", Кентавр";
+				}
+				else {
+					std::cout << std::endl << "Кентавр уже зарегестрирован!" << std::endl;
+				}
+
+			}
+			else if (choice == 6) {
+				if (arr[3] == 0) {
+					num++;
+					FastCam FC;
+					arr[3] = FC.get_time(dis);
+					strarr[3] = FC.get_res();
+					std::cout << std::endl << "Верблюд-быстроход зарегестрированны\n";
+					TCname += ", Верблюд-быстроход";
+				}
+				else {
+					std::cout << std::endl << "Верблюд-быстроход уже зарегестрирован!" << std::endl;
+				}
+			}
+			else if (choice == 2) {
+				if (arr[4] == 0) {
+					num++;
+					Broom B;
+					arr[4] = B.get_time(dis);
+					strarr[4] = B.get_res();
+					std::cout << std::endl << "Метла зарегестрированны\n";
+					TCname += ", Метла";
+					TCname[1] = ' ';
+				}
+				else {
+					std::cout << std::endl << "Метла уже зарегестрирован!" << std::endl;
+				}
+			}
+			else if (choice == 5) {
+				if (arr[5] == 0) {
+					num++;
+					Eagle E;
+					arr[5] = E.get_time(dis);
+					strarr[5] = E.get_res();
+					std::cout << std::endl << "Орёл зарегестрированны\n";
+					TCname += ", Орёл";
+					TCname[1] = ' ';
+				}
+				else {
+					std::cout << std::endl << "Орёл уже зарегестрирован!" << std::endl;
+				}
+			}
+			else if (choice == 7) {
+				if (arr[6] == 0) {
+					num++;
+					Carpet C;
+					arr[6] = C.get_time(dis);
+					strarr[6] = C.get_res();
+					std::cout << std::endl << "Ковёр-самолёт зарегестрированны\n";
+					TCname += ", Ковёр-самолёт";
+					TCname[1] = ' ';
+				}
+				else {
+					std::cout << std::endl << "Ковёр-самолёт уже зарегестрирован!" << std::endl;
+				}
+
+			}
+			else {
+				std::cout << std::endl << "Попытка зарегестрировать неправильный тип транспортного средства" << std::endl;
+			}
+			counter += 1;
+		}
+		delete[] strarr;
+		delete[] arr;
+	}
+
 	/*system("cls");*/
-	
-}
+};
