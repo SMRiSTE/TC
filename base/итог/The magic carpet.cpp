@@ -8,15 +8,15 @@ double Carpet::get_time(int dis) {
 	}
 	else if (1000 < dis <= 5000) {
 		this->shortdis = 3;
-		this->time = (dis - (this->dis / 100 * shortdis)) / this->speed;
+		this->time = (dis - (dis / 100 * static_cast<double>(shortdis))) / this->speed;
 	}
 	else if (5000 < dis < 10000) {
 		this->shortdis = 10;
-		this->time = (static_cast<double>(dis) - (this->dis / 100 * shortdis)) / this->speed;
+		this->time = (dis - (dis / 100 * static_cast<double>(shortdis))) / this->speed;
 	}
 	else {
 		this->shortdis = 5;
-		this->time = (dis - (this->dis / 100 * shortdis)) / this->speed;
+		this->time = (dis - (dis / 100 * static_cast<double>(shortdis))) / this->speed;
 	}
 	return this->time;
 }

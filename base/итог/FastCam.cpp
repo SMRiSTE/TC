@@ -1,7 +1,7 @@
 #include"FastCam.h"
 
 double FastCam::get_time(int dis) {
-	this->time = dis / this->speed + ((dis / this->speed / this->runtime - 2) * 6.5 + this->chilltime);
+	this->time = (dis / static_cast<double>(this->speed)) + ((dis / this->speed / this->runtime - 2) * 8) + (this->chilltime + 6.5);
 	return this->time;
 }
 

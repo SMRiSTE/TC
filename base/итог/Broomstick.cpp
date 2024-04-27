@@ -3,11 +3,11 @@
 #include"Broomstick.h"
 
 double Broom::get_time(int dis) {
-	std::string strnum;
-	strnum = dis;
-	shortdis = strnum[0];
-	this->time = (dis - (this->dis / 100 * shortdis)) / this->speed;
-	std::cout << std::fixed << std::setprecision(2);
+	this->shortdis = dis;
+	while (shortdis >= 10) {
+		this->shortdis /= 10;
+	}
+	this->time = (dis - (dis / 100 * static_cast<double>(this->shortdis))) / this->speed;
 	return this->time;
 }
 

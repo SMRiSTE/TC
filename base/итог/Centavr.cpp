@@ -1,7 +1,7 @@
 #include"Centavr.h"
 
 double Centavr::get_time(int dis) {
-	this->time = dis / this->speed + ((dis / this->speed / this->runtime -1) * 2 + this->chilltime);
+	this->time = dis / this->speed + ((dis / static_cast<double>(this->speed) / this->runtime -1) * 2 + this->chilltime);
 	return this->time;
 }
 

@@ -3,8 +3,7 @@
 #include"Eagle.h"
 
 double Eagle::get_time(int dis) {
-	this->time = (dis - (this->dis / 100 * shortdis)) / this->speed;
-	std::cout << std::fixed << std::setprecision(2);
+	this->time = (dis - (dis / 100 * static_cast<double>(shortdis))) / this->speed;
 	return this->time;
 }
 
