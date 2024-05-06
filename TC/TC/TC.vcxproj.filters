@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RACE.cpp">
+    <ClCompile Include="TC.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="kyrs.cpp">
+    <ClCompile Include="RACE.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RACE.h">
+    <ClInclude Include="TC.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="kyrs.h">
+    <ClInclude Include="RACE.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

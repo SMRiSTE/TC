@@ -1,7 +1,7 @@
 #include <iomanip>
 #include <algorithm>
 #include"RACE.h"
-#include"kyrs.h"
+#include"TC.h"
 void RACE::pr_res() {
 	int choice0;
 	std::cout << "Добро пожаловать в гоночный симулятор!\n" << "1. Гонка для наземного транспорта\n" << "2. Гонка для воздушного транспорта\n" << "3. Гонка для наземного и воздушного транспорта\n" << "Выберите тип транспорта: ";
